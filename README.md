@@ -1,3 +1,5 @@
+I have used LLMs like ChatGPT to understand and execute this project, but all final work has been read, edited and polished by me.
+
 # AI Detective Agent
 
 # System Architecture
@@ -48,7 +50,7 @@ Instead of using a fixed decision tree, the detective dynamically adapts questio
 
 This approach was chosen because murder investigations are inherently non-linear and depend heavily on contextual interpretation.
 
-## LLLMs for Primary Reasoning
+## LLMs for Primary Reasoning
 
 Initially, a cloud hosted model, Gemini were tested because of its strong instruction-following capabilities. However, the final implementation supports local models through Ollama due to limits on Gemini usage.
 
