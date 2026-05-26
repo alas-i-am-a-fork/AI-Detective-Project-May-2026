@@ -80,32 +80,47 @@ def main():
 
         print("\nINVESTIGATION COMPLETE.")
 
-        print("\nCASE REPORT")
+       print("\nCASE REPORT")
 
         report_prompt = (
-            "Generate a concise detective case report based on the "
-            "entire investigation so far.\n\n"
 
-            "Include:\n"
-            "- victim summary\n"
-            "- main suspects\n"
-            "- important evidence\n"
-            "- contradictions in testimony\n"
-            "- likely sequence of events\n"
-            "- most suspicious individual, your reasoning path\n"
-            "- final conclusion\n\n"
+            "Generate a COMPLETE detective case report.\n\n"
 
-            "Write formally, like an actual detective report."
+            "The report must include:\n"
+
+            "1. Victim summary\n"
+            "2. Chronological reconstruction of the crime\n"
+            "3. Main suspects and motives\n"
+            "4. Important evidence collected\n"
+            "5. Contradictions or suspicious statements\n"
+            "6. Step-by-step detective reasoning\n"
+            "7. Why specific suspects became suspicious\n"
+            "8. Why specific questions were asked\n"
+            "9. Errors or interruptions during investigation\n"
+            "10. Final conclusion\n\n"
+
+            "Use the full investigation log.\n\n"
+
         )
 
+
         case_report = detective.analyze(
-            "CASE REPORT REQUEST",
+            "CASE REPORT SYSTEM",
             report_prompt
         )
 
         print(case_report)
 
-        print("\nCASE CLOSED.")
+        with open(
+            "case_report.txt",
+            "w",
+            encoding="utf-8"
+        ) as file:
+
+            file.write(case_report)
+
+        print("\nCASE CLOSED.\n")
+        print("Case report saved to case_report.txt")
 
     except KeyboardInterrupt:
 
