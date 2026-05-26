@@ -48,8 +48,6 @@ Instead of using a fixed decision tree, the detective dynamically adapts questio
 
 This approach was chosen because murder investigations are inherently non-linear and depend heavily on contextual interpretation.
 
----
-
 ## LLLMs for Primary Reasoning
 
 Initially, a cloud hosted model, Gemini were tested because of its strong instruction-following capabilities. However, the final implementation supports local models through Ollama due to limits on Gemini usage.
@@ -64,12 +62,9 @@ The Mistral model was selected due to:
 
 Ollama was observed to generate extra characters, make its own suspect dialogue and narrate scenes unnecessarily. To mitigate this, some prompting constraints had to be introduced, like restricting output length.
 
-
 # Performance Metrics
 
 Due to API limitations and instability encountered during testing with multiple LLM providers, a complete benchmark evaluation against the validation dataset could not be fully completed before submission. However, manual test cases were successfully executed.
-
----
 
 ## Observed Performance
 
@@ -90,7 +85,6 @@ Due to API limitations and instability encountered during testing with multiple 
 * No deterministic contradiction engine yet
 * Investigation reasoning is primarily LLM-driven
 
----
 # Setup and Execution : MacOS and Linux
 
 ## 1. Install Python
@@ -123,8 +117,6 @@ Open another terminal in the project folder:
 
 python3 main.py
 
----
-
 # How To Use
 
 1. Enter a case introduction
@@ -136,8 +128,6 @@ python3 main.py
    * confession occurs
    * investigation is manually terminated
 6. Final case report is automatically generated
-
----
 
 # Future Improvements
 
